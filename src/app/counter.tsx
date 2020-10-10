@@ -5,7 +5,7 @@ interface CounterState {
 }
 
 interface CounterProps {}
-export class Counter extends Component<CounterProps, CounterState> {
+class Counter extends Component<CounterProps, CounterState> {
 	// if you defined component approach and use construction path then define interface with state and props pass to component
 	constructor(props: CounterState) {
 		super(props);
