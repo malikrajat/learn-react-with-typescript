@@ -32,7 +32,7 @@ export interface DeleteTodoActionInterface {
 	payload: number;
 }
 
-export const deleteTodoAction = (id: number): DeleteTodoActionInterface => {
+export const deleteTodo = (id: number): DeleteTodoActionInterface => {
 	return {
 		type: ActionTypes.deleteTodo,
 		payload: id,
