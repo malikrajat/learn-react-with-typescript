@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import { loadTodo, deleteTodo } from "./store/slices/todoSlice";
+import { getTodoLists, deleteTodo } from "./store/slices/todoSlice";
 import { TODO, StoreState } from "./store/interfaces/todoInterface";
 import { connect } from "react-redux";
 
 interface TodoProps {
 	todo: TODO[];
-	loadTodo: Function;
+	getTodoLists: Function;
 	deleteTodo: Function;
 }
 interface AppState {
@@ -26,7 +26,7 @@ class TodoList extends Component<TodoProps, AppState> {
 		}
 	}
 	onBtnClick = (): void => {
-		this.props.loadTodo();
+		this.props.getTodoLists();
 		this.setState({
 			loading: true,
 		});
@@ -60,4 +60,4 @@ const mapStateToProps = ({ todo }: StoreState): { todo: TODO[] } => {
 		todo,
 	};
 };
-export default connect(mapStateToProps, { loadTodo, deleteTodo })(TodoList);
+export default connect(mapStateToProps, { getTodoLists, deleteTodo })(TodoList);
